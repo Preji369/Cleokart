@@ -1,12 +1,11 @@
 import 'package:cleokart/pages/cart.dart';
-import 'package:cleokart/pages/maindrawer.dart';
 import 'package:cleokart/pages/shop.dart';
 import 'package:cleokart/pages/user_home.dart';
 import 'package:cleokart/pages/wishlist.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesPage extends StatefulWidget {
-  const CategoriesPage({super.key});
+  //const CategoriesPage({super.key});
 
   @override
   State<CategoriesPage> createState() => _CategoriesPageState();

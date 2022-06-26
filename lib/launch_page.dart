@@ -2,7 +2,7 @@ import 'package:cleokart/registration_pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class LaunchPage extends StatefulWidget {
-  const LaunchPage({super.key});
+  const LaunchPage({key});
 
   @override
   State<LaunchPage> createState() => _LaunchPageState();

@@ -2,7 +2,7 @@ import 'package:cleokart/pages/maindrawer.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatefulWidget {
-  const ShopPage({super.key});
+  //const ShopPage({super.key});
 
   @override
   State<ShopPage> createState() => _ShopPageState();

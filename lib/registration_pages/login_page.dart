@@ -1,9 +1,9 @@
-import 'package:cleokart/pages/user_home.dart';
+import 'package:cleokart/pages/homepage.dart';
 import 'package:cleokart/registration_pages/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  //const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class LoginPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => UserHomePage(),
+                              builder: (context) => CategoriesPage(),
                             ));
                       },
                       child: Text(

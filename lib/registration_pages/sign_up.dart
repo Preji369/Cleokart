@@ -2,7 +2,7 @@ import 'package:cleokart/registration_pages/otp_page.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+  //const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {

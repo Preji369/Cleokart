@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class DrawerScreen extends StatefulWidget {
-  const DrawerScreen({super.key});
+  //const DrawerScreen({super.key});
 
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
@@ -53,7 +53,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.wallet),
+            leading: Icon(Icons.wallet_travel),
             title: Text(
               "My wallet",
               style: TextStyle(

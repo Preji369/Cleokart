@@ -2,7 +2,7 @@ import 'package:cleokart/pages/maindrawer.dart';
 import 'package:flutter/material.dart';
 
 class WishlistPage extends StatefulWidget {
-  const WishlistPage({super.key});
+  //const WishlistPage({super.key});
 
   @override
   State<WishlistPage> createState() => _WishlistPageState();

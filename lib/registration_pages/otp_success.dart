@@ -2,7 +2,7 @@ import 'package:cleokart/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
 class OtpSuccessfulPage extends StatefulWidget {
-  const OtpSuccessfulPage({super.key});
+  //const OtpSuccessfulPage({super.key});
 
   @override
   State<OtpSuccessfulPage> createState() => _OtpSuccessfulPageState();
