@@ -38,7 +38,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
             unselectedItemColor: Colors.amber,
             currentIndex: _selectedindex,
             onTap: _navigateBottomNavBar,
-            // type: BottomNavigationBarType.fixed,
+            type: BottomNavigationBarType.shifting,
             items: [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
               BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shops'),

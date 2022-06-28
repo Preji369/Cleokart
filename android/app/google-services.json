@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330903759716",
+    "project_id": "cleo-42326",
+    "storage_bucket": "cleo-42326.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330903759716:android:d2e692d78325bd3035a871",
+        "android_client_info": {
+          "package_name": "com.example.cleokart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330903759716-blemcdnda931q8an5retm60s14dahmhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVVXF6uUmAlPAee_nGprI0VC1SD1kiqFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330903759716-blemcdnda931q8an5retm60s14dahmhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

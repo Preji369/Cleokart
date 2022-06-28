@@ -1,5 +1,6 @@
 import 'package:cleokart/registration_pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class LaunchPage extends StatefulWidget {
   const LaunchPage({key});
@@ -9,6 +10,16 @@ class LaunchPage extends StatefulWidget {
 }
 
 class _LaunchPageState extends State<LaunchPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
