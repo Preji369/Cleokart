@@ -19,24 +19,18 @@ class _UserHomePageState extends State<UserHomePage> {
   ];
 
   final List GridImages = [
-    "https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/lkn0extnvjywfts4q7gw",
-    " https://th.bing.com/th/id/OIP.bUBmGW7-YKKXZ1x-itSnPwHaN4?w=178&h=334&c=7&r=0&o=5&pid=1.7",
-    "https://g.foolcdn.com/editorial/images/160552/grocery-bag-full-of-fresh-produce.jpg",
-    "https://th.bing.com/th/id/OIP.m_hfkld63CXQS_vfEAAOjwHaD8?w=285&h=180&c=7&r=0&o=5&pid=1.7",
-    "https://www.teahub.io/photos/full/279-2793369_beauty-parlour-wallpaper-hd.jpg",
-    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/ed6wixm0hoohvxg1kk9j"
-        "https://th.bing.com/th/id/R.46a82a2dab8967ac1da346b0bf4ef291?rik=G%2bkK0IXbg6dLGw&riu=http%3a%2f%2fwww.retiregetrich.com%2fassets%2fUploads%2fbasics-of-investing.jpg&ehk=tXb0ZWfHCkWeGZN9rQmiksqbJVUMtNMk4nD5dFdeuAo%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
-    "https://drkarenwolman.com/wp-content/uploads/2017/03/mobile-devices.jpg",
-    "https://www.ourmarket24.com/images/detailed/3/ll_abjn-px.jpg",
-    "https://www.homeanddecor.com.sg/sites/default/files/blog/2016/03/32682-img-4405.jpg",
-    "https://kiwinurseries.com/wp-content/uploads/2020/04/money-plant-overview.jpg",
-    "https://wallpapercave.com/wp/wp2004258.jpg",
-    "https://advancemed.com.au/wp-content/uploads/2019/02/Depositphotos_51131777_xl-2015-1.jpg",
-    "https://th.bing.com/th/id/OIP.KyW2HhbyknDiZrFXomZuhwHaE8?pid=ImgDet&rs=1",
-    "https://images.fleximize.com/images/starting-a-photography-business-dk-15.01.19-529739-u.jpg",
-    "https://th.bing.com/th/id/OIP.oPxxZSqoQJ9Qshw6YStsLgHaEK?pid=ImgDet&w=185&h=104&c=7",
-    "https://th.bing.com/th/id/OIP.onBOUIrWPOEamsr7PKFHzgHaEK?pid=ImgDet&rs=1",
-    "https://th.bing.com/th/id/R.ea57001dcf2aa69de75665c64e403332?rik=gmUHci4rGXcirg&riu=http%3a%2f%2freliabledelivery.com%2fwp-content%2fuploads%2f2018%2f04%2fHappy-Delivery.jpg&ehk=bknanhgX8Y4N7cWpJM0QzZBkdpjt7qWOgY0Spwl%2bEko%3d&risl=&pid=ImgRaw&r=0",
+    "assets/Womens-Clothing.jpg",
+    "assets/Biriyani.jpg",
+    "assets/Groceries.jpg",
+    "assets/chicken.jpg",
+    "assets/kitchenwares.jpg",
+    "assets/matrimony.jpg",
+    "assets/medicine.jpg",
+    "assets/money.jpg",
+    "assets/moneyplant.jpg",
+    "assets/photographers.jpg",
+    "assets/plumber.jpg",
+    "assets/taxi.jpg",
   ];
 
   @override
@@ -134,7 +128,7 @@ class _UserHomePageState extends State<UserHomePage> {
                       return InkWell(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image.network(
+                          child: Image.asset(
                             GridImages[index],
                           ),
                         ),

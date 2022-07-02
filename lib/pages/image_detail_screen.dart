@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ImageDetailScreen extends StatefulWidget {
-  ImageDetailScreen(this.imageUrl, this.GridImages, {Key? key})
-      : super(key: key);
+  ImageDetailScreen(this.imageUrl, this.isUrl, {Key? key}) : super(key: key);
 
   String imageUrl;
-  String GridImages;
+
+  bool isUrl;
 
   @override
   State<ImageDetailScreen> createState() => _ImageDetailScreenState();
@@ -56,19 +56,22 @@ class _ImageDetailScreenState extends State<ImageDetailScreen> {
           height: 300,
           child: Column(
             children: [
-              Image.network(widget.imageUrl),
-              GridView.builder(
-                  itemCount: 20,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Container(
-                        color: Colors.pink[100],
-                      ),
-                    );
-                  })
+              widget.isUrl == true
+                  ? Image.network(widget.imageUrl)
+                  : Image.asset(widget.imageUrl)
+
+              // GridView.builder(
+              //     itemCount: 20,
+              //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              //         crossAxisCount: 2),
+              //     itemBuilder: (context, index) {
+              //       return Padding(
+              //         padding: const EdgeInsets.all(2.0),
+              //         child: Container(
+              //           color: Colors.pink[100],
+              //         ),
+              //       );
+              //     })
             ],
           ),
         ),
