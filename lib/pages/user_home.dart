@@ -1,3 +1,4 @@
+import 'package:cleokart/model/product.dart';
 import 'package:cleokart/pages/image_detail_screen.dart';
 import 'package:cleokart/pages/maindrawer.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +12,31 @@ class UserHomePage extends StatefulWidget {
 }
 
 class _UserHomePageState extends State<UserHomePage> {
-  final List ImgUrl = [
-    "https://th.bing.com/th/id/R.53ec16a24bfa84aaaea6157de597bec1?rik=uCMwgg85Wg7Y1Q&riu=http%3a%2f%2fwardrobefocus.com%2fwp-content%2fuploads%2f2018%2f03%2f2018-Simple-Winter-Clothes-For-Women-1.jpg&ehk=emh4OYIcrqHQDjnwxqmbzzNFRUsX4XDMxIxaC11WNN8%3d&risl=&pid=ImgRaw&r=0",
-    "https://th.bing.com/th/id/OIP.ZIA-WaZY21_j4IpT3Y5FFQHaD6?pid=ImgDet&rs=1",
-    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/lncslkzktntmlz839ema",
-    "https://th.bing.com/th/id/R.2a02ac333e5b8fd8a6a996d0765f474c?rik=MySb5ic5wgADTg&riu=http%3a%2f%2fwww.whatwouldvwear.com%2fwp-content%2fuploads%2f2017%2f05%2fVanessa-Lambert-blogger-behind-What-Would-V-Wear-steps-forward-with-Famous-Footwear-in-her-White-low-top-Converse-shoes-wearing-ripped-denim_7.jpg&ehk=dsIWivegldIZq10uoZTk3UBfgZM9pxIt5V1R0HiDMKY%3d&risl=&pid=ImgRaw&r=0"
+  
+  List<Product> bannerList = [
+    Product(
+        "https://th.bing.com/th/id/R.53ec16a24bfa84aaaea6157de597bec1?rik=uCMwgg85Wg7Y1Q&riu=http%3a%2f%2fwardrobefocus.com%2fwp-content%2fuploads%2f2018%2f03%2f2018-Simple-Winter-Clothes-For-Women-1.jpg&ehk=emh4OYIcrqHQDjnwxqmbzzNFRUsX4XDMxIxaC11WNN8%3d&risl=&pid=ImgRaw&r=0",
+        true,
+        "fascdgaswvh",
+        100.5),
+    Product(
+        "https://th.bing.com/th/id/OIP.ZIA-WaZY21_j4IpT3Y5FFQHaD6?pid=ImgDet&rs=1",
+        true,
+        "asdsada",
+        540.5),
+    Product(
+        "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/lncslkzktntmlz839ema",
+        true,
+        "ytyhty",
+        440.5),
+    Product(
+        "https://th.bing.com/th/id/R.2a02ac333e5b8fd8a6a996d0765f474c?rik=MySb5ic5wgADTg&riu=http%3a%2f%2fwww.whatwouldvwear.com%2fwp-content%2fuploads%2f2017%2f05%2fVanessa-Lambert-blogger-behind-What-Would-V-Wear-steps-forward-with-Famous-Footwear-in-her-White-low-top-Converse-shoes-wearing-ripped-denim_7.jpg&ehk=dsIWivegldIZq10uoZTk3UBfgZM9pxIt5V1R0HiDMKY%3d&risl=&pid=ImgRaw&r=0",
+        true,
+        "qwrqwrqq",
+        10.5)
   ];
 
-  final List GridImages = [
+  final List<String> GridImages = [
     "assets/Womens-Clothing.jpg",
     "assets/Biriyani.jpg",
     "assets/Groceries.jpg",
@@ -28,8 +46,8 @@ class _UserHomePageState extends State<UserHomePage> {
     "assets/medicine.jpg",
     "assets/money.jpg",
     "assets/moneyplant.jpg",
-    "assets/photographers.jpg",
-    "assets/plumber.jpg",
+    "assets/Photographers.jpg",
+    "assets/Plumber.jpg",
     "assets/taxi.jpg",
   ];
 
@@ -84,21 +102,23 @@ class _UserHomePageState extends State<UserHomePage> {
               height: 200,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: ImgUrl.length,
+                  itemCount: bannerList.length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.network(
-                          ImgUrl[index],
+                          bannerList[index].imageUrl,
+                          width: 200,
+                          // fit: BoxFit.fill,
                         ),
                       ),
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ImageDetailScreen(
-                                  ImgUrl[index], GridImages[index]),
+                              builder: (context) =>
+                                  ImageDetailScreen(bannerList[index]),
                             ));
                       },
                     );
@@ -133,12 +153,12 @@ class _UserHomePageState extends State<UserHomePage> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ImageDetailScreen(
-                                    GridImages[index], ImgUrl[index]),
-                              ));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) =>
+                          //           ImageDetailScreen(GridImages[index], false),
+                          //     ));
                         },
                       );
                     }),
