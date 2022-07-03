@@ -49,37 +49,36 @@ class _ImageDetailScreenState extends State<ImageDetailScreen> {
               ))
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 80),
-        child: Column(
-          children: [
-            widget.product.isUrl == true
-                ? Image.network(widget.product.imageUrl)
-                : Image.asset(widget.product.imageUrl),
-            Text(
-              widget.product.imageDescription,
-              style: TextStyle(fontSize: 24, color: Colors.white),
-            ),
-            Text(
-              widget.product.price.toString(),
-              style: TextStyle(fontSize: 24, color: Colors.white),
-            ),
-            Expanded(
-              child: GridView.builder(
-                  itemCount: 20,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Container(
-                        color: Colors.pink[100],
-                      ),
-                    );
-                  }),
-            )
-          ],
-        ),
+      body: Column(
+        children: [
+          widget.product.isUrl == true
+              ? Image.network(widget.product.imageUrl)
+              : Image.asset(widget.product.imageUrl),
+          Text(
+            widget.product.imageDescription,
+            style: TextStyle(fontSize: 24, color: Colors.white),
+          ),
+          Text(
+            widget.product.price.toString(),
+            style: TextStyle(fontSize: 24, color: Colors.white),
+          ),
+          Expanded(
+            child: GridView.builder(
+                shrinkWrap: true,
+                // physics: NeverScrollableScrollPhysics(),
+                itemCount: 20,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Container(
+                      color: Colors.pink[100],
+                    ),
+                  );
+                }),
+          ),
+        ],
       ),
     );
   }
