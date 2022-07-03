@@ -1,8 +1,18 @@
-import 'package:cleokart/registration_pages/otp_page.dart';
+import 'package:cleokart/model/user.dart';
+import 'package:cleokart/pages/homepage.dart';
+import 'package:cleokart/util/authentication_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
   //const SignUpPage({super.key});
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+
+  final databaseReference = FirebaseDatabase.instance.ref().child("user");
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +47,7 @@ class SignUpPage extends StatelessWidget {
                     cursorColor: Colors.white,
                     keyboardType: TextInputType.name,
                     maxLines: 1,
+                    controller: nameController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.people,
@@ -77,6 +88,7 @@ class SignUpPage extends StatelessWidget {
                     cursorColor: Colors.white,
                     keyboardType: TextInputType.emailAddress,
                     maxLines: 1,
+                    controller: emailController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.email,
@@ -96,6 +108,7 @@ class SignUpPage extends StatelessWidget {
                   child: TextField(
                     obscureText: true,
                     cursorColor: Colors.white,
+                    controller: passwordController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.remove_red_eye,
@@ -135,15 +148,36 @@ class SignUpPage extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 20, 2, 57)),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => OtpPage(),
+                      onPressed: () async {
+                        await AuthenticationService(FirebaseAuth.instance)
+                            .firebaseRegister(emailController.text.trim(),
+                                passwordController.text.trim())
+                            .then((value) async {
+                          if (value == "Signed up") {
+                            CleoUser user = CleoUser(
+                                nameController.text.trim(),
+                                "",
+                                emailController.text.trim(),
+                                passwordController.text.trim(),
+                                "");
+
+                            await databaseReference.push().set(user.toJson());
+
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CategoriesPage(),
+                                ));
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text(value),
+                              backgroundColor: Colors.red,
                             ));
+                          }
+                        });
                       },
                       child: Text(
-                        "Send OTP",
+                        "Register",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

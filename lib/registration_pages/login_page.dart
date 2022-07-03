@@ -1,9 +1,17 @@
 import 'package:cleokart/pages/homepage.dart';
 import 'package:cleokart/registration_pages/sign_up.dart';
+import 'package:cleokart/util/authentication_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   //const LoginPage({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +45,7 @@ class LoginPage extends StatelessWidget {
                     cursorColor: Colors.white,
                     keyboardType: TextInputType.emailAddress,
                     maxLines: 1,
+                    controller: emailController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.email,
@@ -55,6 +64,7 @@ class LoginPage extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20),
                   child: TextField(
                     obscureText: true,
+                    controller: passwordController,
                     cursorColor: Colors.white,
                     decoration: InputDecoration(
                         prefixIcon: Icon(
@@ -94,12 +104,25 @@ class LoginPage extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 20, 2, 57)),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CategoriesPage(),
+                      onPressed: () async {
+                        await AuthenticationService(FirebaseAuth.instance)
+                            .firebaseLogin(emailController.text.trim(),
+                                passwordController.text.trim())
+                            .then((value) {
+                          if (value == "Signed in") {
+                            // databaseReference.push().set(product.toJson());
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CategoriesPage(),
+                                ));
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text(value),
+                              backgroundColor: Colors.red,
                             ));
+                          }
+                        });
                       },
                       child: Text(
                         "Login",

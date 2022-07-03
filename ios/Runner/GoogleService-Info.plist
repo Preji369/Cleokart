@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>330903759716-t1o94qvduop8adkg8iuhn7odslbjgfrf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.330903759716-t1o94qvduop8adkg8iuhn7odslbjgfrf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBx6VYu0aWLNjoeT8QcAB2mO_HvO3hjyvQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>330903759716</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.cleokart</string>
+	<key>PROJECT_ID</key>
+	<string>cleo-42326</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cleo-42326.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:330903759716:ios:372f3f141f86ee0535a871</string>
+	<key>DATABASE_URL</key>
+	<string>https://cleo-42326-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
