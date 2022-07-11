@@ -58,10 +58,10 @@ class _ImageDetailScreenState extends State<ImageDetailScreen> {
             widget.product.imageDescription,
             style: TextStyle(fontSize: 24, color: Colors.white),
           ),
-          Text(
-            widget.product.price.toString(),
-            style: TextStyle(fontSize: 24, color: Colors.white),
-          ),
+          // Text(
+          //   widget.product.price.toString(),
+          //   style: TextStyle(fontSize: 24, color: Colors.white),
+          // ),
           Expanded(
             child: GridView.builder(
                 shrinkWrap: true,
@@ -71,11 +71,11 @@ class _ImageDetailScreenState extends State<ImageDetailScreen> {
                     crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Container(
-                      color: Colors.pink[100],
-                    ),
-                  );
+                      padding: const EdgeInsets.all(2.0),
+                      child: Container(
+                        color: Colors.pink[100],
+                        child: Center(child: Image.asset("assets/shop.jpg")),
+                      ));
                 }),
           ),
         ],

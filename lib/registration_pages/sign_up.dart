@@ -11,6 +11,8 @@ class SignUpPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
+  TextEditingController numberController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
 
   final databaseReference = FirebaseDatabase.instance.ref().child("user");
 
@@ -65,6 +67,7 @@ class SignUpPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: TextField(
+                    controller: numberController,
                     cursorColor: Colors.white,
                     keyboardType: TextInputType.number,
                     maxLength: 10,
@@ -126,6 +129,7 @@ class SignUpPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: TextField(
+                    controller: addressController,
                     cursorColor: Colors.white,
                     keyboardType: TextInputType.text,
                     maxLines: 2,
@@ -156,10 +160,10 @@ class SignUpPage extends StatelessWidget {
                           if (value == "Signed up") {
                             CleoUser user = CleoUser(
                                 nameController.text.trim(),
-                                "",
+                                addressController.text.trim(),
                                 emailController.text.trim(),
                                 passwordController.text.trim(),
-                                "");
+                                numberController.text.trim());
 
                             await databaseReference.push().set(user.toJson());
 

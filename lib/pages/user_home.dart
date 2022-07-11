@@ -12,43 +12,90 @@ class UserHomePage extends StatefulWidget {
 }
 
 class _UserHomePageState extends State<UserHomePage> {
-  
   List<Product> bannerList = [
     Product(
-        "https://th.bing.com/th/id/R.53ec16a24bfa84aaaea6157de597bec1?rik=uCMwgg85Wg7Y1Q&riu=http%3a%2f%2fwardrobefocus.com%2fwp-content%2fuploads%2f2018%2f03%2f2018-Simple-Winter-Clothes-For-Women-1.jpg&ehk=emh4OYIcrqHQDjnwxqmbzzNFRUsX4XDMxIxaC11WNN8%3d&risl=&pid=ImgRaw&r=0",
-        true,
-        "fascdgaswvh",
-        100.5),
+      "https://th.bing.com/th/id/R.53ec16a24bfa84aaaea6157de597bec1?rik=uCMwgg85Wg7Y1Q&riu=http%3a%2f%2fwardrobefocus.com%2fwp-content%2fuploads%2f2018%2f03%2f2018-Simple-Winter-Clothes-For-Women-1.jpg&ehk=emh4OYIcrqHQDjnwxqmbzzNFRUsX4XDMxIxaC11WNN8%3d&risl=&pid=ImgRaw&r=0",
+      true,
+      "Shop Name",
+    ),
     Product(
-        "https://th.bing.com/th/id/OIP.ZIA-WaZY21_j4IpT3Y5FFQHaD6?pid=ImgDet&rs=1",
-        true,
-        "asdsada",
-        540.5),
+      "https://th.bing.com/th/id/OIP.ZIA-WaZY21_j4IpT3Y5FFQHaD6?pid=ImgDet&rs=1",
+      true,
+      "Shop Name",
+    ),
     Product(
-        "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/lncslkzktntmlz839ema",
-        true,
-        "ytyhty",
-        440.5),
+      "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/lncslkzktntmlz839ema",
+      true,
+      "Shop Name",
+    ),
     Product(
-        "https://th.bing.com/th/id/R.2a02ac333e5b8fd8a6a996d0765f474c?rik=MySb5ic5wgADTg&riu=http%3a%2f%2fwww.whatwouldvwear.com%2fwp-content%2fuploads%2f2017%2f05%2fVanessa-Lambert-blogger-behind-What-Would-V-Wear-steps-forward-with-Famous-Footwear-in-her-White-low-top-Converse-shoes-wearing-ripped-denim_7.jpg&ehk=dsIWivegldIZq10uoZTk3UBfgZM9pxIt5V1R0HiDMKY%3d&risl=&pid=ImgRaw&r=0",
-        true,
-        "qwrqwrqq",
-        10.5)
+      "https://th.bing.com/th/id/R.2a02ac333e5b8fd8a6a996d0765f474c?rik=MySb5ic5wgADTg&riu=http%3a%2f%2fwww.whatwouldvwear.com%2fwp-content%2fuploads%2f2017%2f05%2fVanessa-Lambert-blogger-behind-What-Would-V-Wear-steps-forward-with-Famous-Footwear-in-her-White-low-top-Converse-shoes-wearing-ripped-denim_7.jpg&ehk=dsIWivegldIZq10uoZTk3UBfgZM9pxIt5V1R0HiDMKY%3d&risl=&pid=ImgRaw&r=0",
+      true,
+      "Shop Name",
+    )
   ];
 
-  final List<String> GridImages = [
-    "assets/Womens-Clothing.jpg",
-    "assets/Biriyani.jpg",
-    "assets/Groceries.jpg",
-    "assets/chicken.jpg",
-    "assets/kitchenwares.jpg",
-    "assets/matrimony.jpg",
-    "assets/medicine.jpg",
-    "assets/money.jpg",
-    "assets/moneyplant.jpg",
-    "assets/Photographers.jpg",
-    "assets/Plumber.jpg",
-    "assets/taxi.jpg",
+  List<Product> GridImages = [
+    Product(
+      "assets/Womens-Clothing.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/Biriyani.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/Groceries.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/chicken.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/kitchenwares.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/matrimony.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/medicine.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/money.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/moneyplant.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/Photographers.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/Plumber.jpg",
+      false,
+      "Shop Name",
+    ),
+    Product(
+      "assets/taxi.jpg",
+      false,
+      "Shop Name",
+    ),
   ];
 
   @override
@@ -149,16 +196,17 @@ class _UserHomePageState extends State<UserHomePage> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Image.asset(
-                            GridImages[index],
+                            GridImages[index].imageUrl,
                           ),
                         ),
                         onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //       builder: (context) =>
-                          //           ImageDetailScreen(GridImages[index], false),
-                          //     ));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ImageDetailScreen(
+                                  GridImages[index],
+                                ),
+                              ));
                         },
                       );
                     }),
